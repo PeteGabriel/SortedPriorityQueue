@@ -26,12 +26,17 @@ My decisions during the development of this project were heavily influenced by t
 
 ## Priority Queue
 
-A queue is a data structure that follows the pattern of FIFO (First in, First out). It is used in situations when the order is important. Usually, a queue have the following interface:
+A queue is a data structure that follows the pattern of FIFO (First in, First out). It is used in situations where the order is important. Usually, a queue have the following interface:
 
 * Enqueue(x, q): Insert item _x_ at the back of queue _q_.
 * Dequeue(q): Return (and remove) the front item from queue _q_.
 
-The difference between a _priority queue_ and a simple _queue_ is that the elements inside the first are sorted accordingly with some predicate that expresses how the concept of priority must be understood by the data structure. This means that the first to enter is not necessarily the first to be retrieved.
+The difference between a _priority queue_ and a simple _queue_ is that the elements inside the first are sorted accordingly with some predicate that expresses how the concept of priority must be understood by the data structure. This means that the first to enter is not necessarily the first to be retrieved. 
+
+> _"Priority queues are data structures that provide more flexibility than simple
+sorting, because they allow new elements to enter a system at arbitrary intervals.
+It is much more cost-effective to insert a new job into a priority queue than to
+re-sort everything on each such arrival."_ 
 
 ## Sorting algorithms complexity 
 
