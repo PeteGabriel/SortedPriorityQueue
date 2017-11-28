@@ -1,6 +1,6 @@
 ﻿namespace PriorityQueueFromSorting.contracts
 {
-    public interface IMinPriorityQueue
+    public interface IMinPriorityQueue<T>:  IQueue<T>
     {
         
     }

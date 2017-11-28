@@ -11,4 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PriorityQueueFromSorting\PriorityQueueFromSorting.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="InitialStateQueueTest.cs" />
+  </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 
 namespace PriorityQueueFromSorting.contracts
 {
-    public interface IMaxPriorityQueue<T> : IDisposable
+    public interface IMaxPriorityQueue<T> : IQueue<T>
     {
         void Insert(T item);
 

@@ -6,7 +6,7 @@ using Xunit.Sdk;
 
 namespace PriorityQueueFromSortingTest.primitives
 {
-    public class IntegerQueueTest : IDisposable
+    public class IntegerQueueTest
     {
         private IMaxPriorityQueue<int> _queue;
 
@@ -17,15 +17,20 @@ namespace PriorityQueueFromSortingTest.primitives
         
         
         [Fact]
-        public void InsertOneElement_QueueMustReturnThatSameElement()
+        public void InsertOneElement_QueueMustRemoveThatSameElement()
         {
             _queue.Insert(3);
             Assert.True(_queue.GetMaximum() == 3);
+            Assert.True(_queue.Size() == 0);
         }
 
-        public void Dispose()
+        [Fact]
+        public void WhenUsingPeekOperation_ShouldNotRemoveElementsFromQueue()
         {
-            _queue.Dispose();
+            _queue.Insert(3);
+            Assert.True(_queue.Peek() == 3);
+            Assert.True(_queue.Size() == 1);
         }
+
     }
 }
