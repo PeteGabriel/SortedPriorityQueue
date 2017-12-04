@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using PriorityQueueFromSorting.contracts;
 
 namespace PriorityQueueFromSorting.types
@@ -9,20 +11,12 @@ namespace PriorityQueueFromSorting.types
     /// 
     /// </summary>
     /// <typeparam name="T"> Any generic type </typeparam>
-    public class MaxPriorityQueue<T> : IMaxPriorityQueue<T> where T: new()
+    public class MaxPriorityQueue<T> : PriorityQueue<T> where T: new()
     {
-        #region State
-        
-        private int _size;
-        private int _initialCapacity;
-        private T[] _queue;
-        
-        #endregion
-        
         //private bool _isGenericTypeInt;
 
         private Func<T, T, bool> _priorityPredicate;
-        private IComparable<T> _comparator;
+        private IComparer<T> _comparator;
                
         private bool IsUsingPredicate => _priorityPredicate != null;
         
@@ -49,7 +43,7 @@ namespace PriorityQueueFromSorting.types
             _priorityPredicate = predicate;
         }
         
-        public MaxPriorityQueue(IComparable<T> comparable): this()
+        public MaxPriorityQueue(IComparer<T> comparable): this()
         {
             _comparator = comparable;
         }
@@ -59,44 +53,35 @@ namespace PriorityQueueFromSorting.types
             _priorityPredicate = predicate;
         }
         
-        public MaxPriorityQueue(IComparable<T> comparable, int initialCapacity): this(initialCapacity)
+        public MaxPriorityQueue(IComparer<T> comparable, int initialCapacity): this(initialCapacity)
         {
             _comparator = comparable;
         }
         
         #endregion
         
-        
-        /// <summary>
-        /// Return, without removing, the item with the highest priority.
-        /// </summary>
-        public T Peek()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Return the total number of elements inside the queue.
-        /// </summary>
-        public int Size() => _size;
-
-        public void Insert(T item)
+       
+        public override void Insert(T item)
         {
             if (_size >= _queue.Length - 1)//resize if needed
             {
                 Array.Resize(ref _queue, _queue.Length * 2);
             }
             _size+=1; //one more element
+            _queue[_size] = item;
+            //BubbleUpHeap();
             
             throw new NotImplementedException();
         }
 
-        public T GetMaximum()
+        public override T GetMaximum()
         {
+            _size-= 1; //decrease # of elements
             throw new NotImplementedException();
         }
 
-    
+
+
     }
 
 }
