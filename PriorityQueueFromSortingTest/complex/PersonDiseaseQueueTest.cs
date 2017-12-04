@@ -6,7 +6,7 @@ namespace PriorityQueueFromSortingTest.complex
 {
     public class PersonDiseaseQueueTest
     {
-        private IMaxPriorityQueue<Person> _queue;
+        private readonly MaxPriorityQueue<Person> _queue;
 
         public PersonDiseaseQueueTest()
         {

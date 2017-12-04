@@ -8,7 +8,7 @@ namespace PriorityQueueFromSortingTest.primitives
 {
     public class IntegerQueueTest
     {
-        private IMaxPriorityQueue<int> _queue;
+        private readonly MaxPriorityQueue<int> _queue;
 
         public IntegerQueueTest()
         {

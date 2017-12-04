@@ -9,16 +9,9 @@ namespace PriorityQueueFromSorting.sorting
     /// to maintain) yet stronger than random order (so the minimum element can be 
     /// quickly identified).
     /// </summary>
-    public sealed class BinaryHeap<T>
+    public static class HeapSort<T>
     {
-        private T[] _sequence;
-        
-        public BinaryHeap(T[] sequence)
-        {
-            _sequence = sequence;
-        }
-
-        public T ExtractMin()
+        public static T[] Sort(T[] sequence)
         {
             throw new NotImplementedException();
         }
