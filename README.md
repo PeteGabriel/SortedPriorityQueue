@@ -53,6 +53,4 @@ It seems right to think that Heapsort is the valid choice for this project. It d
 ## Heapsort Algorithm
 
 * Comparison-based sorting algorithm
-
-
-tbc..
+* Typically not stable but can be made so.
